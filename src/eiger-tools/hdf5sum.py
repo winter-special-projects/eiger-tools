@@ -1,5 +1,3 @@
-
-
 import os
 import shutil
 import sys
@@ -22,7 +20,7 @@ def h5sum(output_h5, input_h5s):
     nn = len(inputs)
 
     print(f"Merging {nn} sets of shape {shapes[0]}")
-    
+
     with h5py.File(output_h5, "x") as fout:
         frames, slow, fast = shapes[0]
 
@@ -49,7 +47,3 @@ if __name__ == "__main__":
     for arg in sys.argv[2:]:
         assert os.path.exists(arg)
     h5sum(sys.argv[1], sys.argv[2:])
-
-
-
-
